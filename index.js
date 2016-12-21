@@ -8,7 +8,9 @@ app.get('/', function (req, res) {
 });
 
 app.post('/', function(req, res) {
-	console.log(req);
+	console.log('Req is: ', req);
+	console.log('Req body is: ', req.body);
+	console.log('Req body text is: ', req.body.text);
 	res.send('POST request');
 });
 
