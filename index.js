@@ -25,7 +25,7 @@ app.post('/', function(req, res) {
 	// response_url: 'https://hooks.slack.com/commands/T04A3HTAQ/120695578774/jHln0XCIbPbJpLqCOCF0nKbm'
 	// }
 
-	if (req.body.token != "i0FRbfqZqHCJcG3g9OfUL7hf111") {
+	if (req.body.token != "i0FRbfqZqHCJcG3g9OfUL7hf") {
 		res.status(401).send("Sorry, you don't have permission to use this command");
 	}
 
