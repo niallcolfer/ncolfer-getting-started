@@ -11,10 +11,25 @@ app.get('/', function (req, res) {
 });
 
 app.post('/', function(req, res) {
-	console.log('Req is: ', req);
-	console.log('Req body is: ', req.body);
-	console.log('Req body text is: ', req.body.text);
-	res.send('POST request');
+	// Example req.body:
+	// {
+	// token: 'i0FRbfqZqHCJcG3g9OfUL7hf',
+	// team_id: 'T04A3HTAQ',
+	// team_domain: 'oxegen',
+	// channel_id: 'D1KGYH5GV',
+	// channel_name: 'directmessage',
+	// user_id: 'U04A5D86G',
+	// user_name: 'niall',
+	// command: '/ping',
+	// text: 'hello there',
+	// response_url: 'https://hooks.slack.com/commands/T04A3HTAQ/120695578774/jHln0XCIbPbJpLqCOCF0nKbm'
+	// }
+
+	if (req.body.token != "i0FRbfqZqHCJcG3g9OfUL7hf111") {
+		res.status(401).send("Sorry, you don't have permission to use this command");
+	}
+
+	res.send('message received');
 });
 
 app.listen(app.get('port'), function() {
