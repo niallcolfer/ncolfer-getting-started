@@ -28,7 +28,7 @@ app.post('/', function(req, res) {
 	if (req.body.token != process.env.SLACK_TOKEN) {
 		res.status(401).send("Sorry, you don't have permission to use this command");
 	} else {
-		console.log("Req.body.text: ", req.body.text);
+		console.log("Req.body: ", req.body);
 		res.send('message received');
 	}
 });
