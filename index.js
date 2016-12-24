@@ -13,7 +13,7 @@ app.get('/', function (req, res) {
 app.post('/', function(req, res) {
 	// Example req.body:
 	// {
-	// token: 'i0FRbfqZqHCJcG3g9OfUL7hf',
+	// token: 'SLACK_TOKEN',
 	// team_id: 'T04A3HTAQ',
 	// team_domain: 'oxegen',
 	// channel_id: 'D1KGYH5GV',
@@ -25,7 +25,7 @@ app.post('/', function(req, res) {
 	// response_url: 'https://hooks.slack.com/commands/T04A3HTAQ/120695578774/jHln0XCIbPbJpLqCOCF0nKbm'
 	// }
 
-	if (req.body.token != "i0FRbfqZqHCJcG3g9OfUL7hf") {
+	if (req.body.token != "SLACK_TOKEN") {
 		res.status(401).send("Sorry, you don't have permission to use this command");
 	}
 
