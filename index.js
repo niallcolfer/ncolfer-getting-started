@@ -1,5 +1,3 @@
-/* global ENV */
-
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
@@ -27,7 +25,7 @@ app.post('/', function(req, res) {
 	// response_url: 'https://hooks.slack.com/commands/T04A3HTAQ/120695578774/jHln0XCIbPbJpLqCOCF0nKbm'
 	// }
 
-	if (req.body.token != ENV['SLACK_TOKEN']) {
+	if (req.body.token != process.env.SLACK_TOKEN) {
 		res.status(401).send("Sorry, you don't have permission to use this command");
 	}
 
