@@ -6,10 +6,6 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.set('port', (process.env.PORT || 3000));
 
-app.get('/', function (req, res) {
-  res.send('Hello World!');
-});
-
 app.post('/', function(req, res) {
 	// Example req.body:
 	// {
