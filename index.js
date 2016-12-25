@@ -25,6 +25,15 @@ app.post('/', function(req, res) {
 		res.status(401).send("Sorry, you don't have permission to use this command");
 	} else {
 		console.log("Req.body: ", req.body);
+		var txt = req.body.text,
+			nominee,
+			reason;
+		
+		nominee = txt.substr(0, txt.indexOf(' '));
+		reason = txt.substr(txt.indexOf(' ') + 1);
+		
+		console.log('Nominee is ', nominee);
+		console.log('Reason is ', reason);
 		res.send('message received');
 	}
 });
