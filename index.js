@@ -29,8 +29,8 @@ app.post('/', function(req, res) {
 			nominee,
 			reason;
 		
-		nominee = txt.substr(0, txt.indexOf(' '));
-		reason = txt.substr(txt.indexOf(' ') + 1);
+		nominee = txt.substr(0, txt.indexOf(' ')).trim();
+		reason = txt.substr(txt.indexOf(' ') + 1).trim();
 		
 		console.log('Nominee is ', nominee);
 		console.log('Reason is ', reason);
